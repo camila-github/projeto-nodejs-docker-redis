@@ -7,10 +7,10 @@ O intuito do projeto é criar jobs em Background assíncrona utilizando NodeJS +
 
 Nesse projeto, foi utilizado ferramentas Back End + Nodemom + NodeJS + Docker + Redis (Banco de dados Não-relacional - NoSQL) + Bull (Gerenciamento de Filas) + Bull Dasboard (Visualização das filas).
 Foi aplicado os conceitos de: 
-Criação de um banco de dados Redis (NoSql) com uso do Docker, onde foi criado uma virtualização do banco de dados (container). 
-Utilizado conceitos async/wait (ES7), promisses (ES6). 
-Criação de Background Jobs (filas) com utilização da biblioteca Bull, para gerenciar as filas e utilização do Bull Dasboard, para visualização das filas. 
-Utilização da biblioteca 'password-generator' para geração de senha randomica.
+- Criação de um banco de dados Redis (NoSql) com uso do Docker, onde foi criado uma virtualização do banco de dados (container). 
+- Utilizado conceitos async/wait (ES7), promisses (ES6). 
+- Criação de Background Jobs (filas) com utilização da biblioteca Bull, para gerenciar as filas e utilização do Bull Dasboard, para visualização das filas. 
+- Utilização da biblioteca 'password-generator' para geração de senha randomica.
 
 
 #### Requisitos:

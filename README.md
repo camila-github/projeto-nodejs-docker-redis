@@ -2,7 +2,7 @@
 
 O projeto publicado é referente ao treinamento do Curso BOOTCAMP Desenvolvedor NodeJS da Digital Innovation One (https://digitalinnovation.one).
 
-O intuito do projeto é criar jobs em Background assíncrona utilizando NodeJS + Redis (BDA NoSQL), com a função de cadastrar usuarios (com nome e email), onde será enviado emails para geração de filas de email, que na qual a biblioteca Bull fará o gerenciamento da filas. E para visualização das filas será utilizado o Bull Dashboard.
+O intuito do projeto é criar jobs em Background assíncrona utilizando NodeJS + Redis (BDA NoSQL), com a função de cadastrar usuarios (com nome e email), onde será enviado emails para geração de filas de email, que na qual a biblioteca Bull fará o gerenciamento das filas. E para visualização das filas será utilizado o Bull Dashboard.
 
 
 Nesse projeto, foi utilizado ferramentas Back End + Nodemom + NodeJS + Docker + Redis (Banco de dados Não-relacional - NoSQL) + Bull (Gerenciamento de Filas) + Bull Dasboard (Visualização das filas).
@@ -75,7 +75,7 @@ DotEnv -  Ferramenta utilizada para orquestrar as variáveis de ambiente do proj
 
 Nodemail - É um módulo Node de código aberto que permite enviar e-mails pela aplicação.
 
-Instale as ferramentas no utilizando o comando abaixo:
+Instale as ferramentas utilizando o comando abaixo:
 
 ```
 yarn add express nodemailer dotenv
@@ -88,7 +88,7 @@ Nodemon - é um utilitário que monitora todas as alterações nos arquivos de s
 
 Sucrase - O Sucrase é um compilador que permite um desenvolvimento muito rápido. O Sucrase assume que você está desenvolvendo em um navegador recente ou em uma versão recente do Node.js, o mesmo se concentra na compilação de extensões da linguagem não-padrão, como por exemplo JSX, TypeScript e Flow.
 
--D - instala dependencias de desenvolvimento, ou seja, essas duas ferramentas apenas serão utilizadas no ambiente local para desenvolvimento. Não ficará disponivel, em servidores externos, como o ambiente de desenvolvimento, homologação, produção.
+-D - instala dependencias de desenvolvimento, ou seja, essas duas ferramentas (nodemon + sucrese) apenas serão utilizadas no ambiente local para desenvolvimento. Não ficará disponivel, em servidores externos, como o ambiente de desenvolvimento, homologação, produção.
 
 Execute o comando abaixo para instalar as duas dependencias de desenvolvimento. Apos a instalação, repare que no arquivo 'package.json', foi adicionado essas duas dependencias na opção 'devDependencies'
 
@@ -138,7 +138,7 @@ MAILTRAP
 
 Utilizado o MailTrap, apenas para teste de envio e recebimento de e-mail. O MailTrap inspeciona e depura amostras de e-mail antes de entregar o projeto final. O MailTrap tem opção paga e gratuita. Utilizei opção gratuita, que para pequenos projetos, é o suficiente para testar envio e recebimento de email.
 
-Detalhe: Apos os testes, antes de pubilicar no gitHub não publique o arquivo .env com suas credenciais. Como boas-praticas, nao publique o arquivo no gitHub, mas se preferir, apenas para fins didáticos publique um arquivo '.env.example' apenas para ser usado como modelo, mas sem credenciais.
+Detalhe: Apos os testes, antes de publicar no gitHub não publique o arquivo '.env' com suas credenciais. Como boas-praticas, nao publique o arquivo no gitHub, mas se preferir, apenas para fins didáticos, publique um arquivo '.env.example' apenas para ser usado como modelo, mas sem credenciais.
 
 ```
 https://mailtrap.io/

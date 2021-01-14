@@ -8,7 +8,7 @@ const app = express();
 //Inicia o Bull Dashboard
 BullBoard.setQueues(Queue.queues.map(queue => queue.bull));
 
-/*Comando para aceitar requisições no formato json*/
+/*Comando para aceitar requisicões no formato json*/
 app.use(express.json());
 app.post('/users', UserController.store);
 

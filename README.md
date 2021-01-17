@@ -1,4 +1,4 @@
-## Criar Jobs em  Background utilizando NodeJs + Redis (BDA NoSQL) + Docker
+## Criação de Jobs em  Background utilizando NodeJs + Redis (BDA NoSQL) + Docker
 
 O projeto publicado é referente ao treinamento do Curso Bootcamp Desenvolvedor NodeJS da Digital Innovation One (https://digitalinnovation.one).
 

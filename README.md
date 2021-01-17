@@ -1,9 +1,8 @@
-## Treinamento Digital Innovation One - BOOTCAMP Desenvolvedor NodeJS (DIO).
+## Criar Jobs em  Background utilizando NodeJs + Redis (BDA NoSQL) + Docker
 
-O projeto publicado é referente ao treinamento do Curso BOOTCAMP Desenvolvedor NodeJS da Digital Innovation One (https://digitalinnovation.one).
+O projeto publicado é referente ao treinamento do Curso Bootcamp Desenvolvedor NodeJS da Digital Innovation One (https://digitalinnovation.one).
 
 O intuito do projeto é criar jobs em Background assíncrona utilizando NodeJS + Redis (BDA NoSQL), com a função de cadastrar usuarios (com nome e email), onde será enviado emails para geração de filas de email, que na qual a biblioteca Bull fará o gerenciamento das filas. E para visualização das filas será utilizado o Bull Dashboard.
-
 
 Nesse projeto, foi utilizado ferramentas Back End + Nodemom + NodeJS + Docker + Redis (Banco de dados Não-relacional - NoSQL) + Bull (Gerenciamento de Filas) + Bull Dasboard (Visualização das filas).
 Foi aplicado os conceitos de: 
@@ -13,9 +12,9 @@ Foi aplicado os conceitos de:
 - Utilização da biblioteca 'password-generator' para geração de senha randomica.
 
 
-#### Requisitos:
+## Requisitos:
 
-NODE JS. 
+#### NODE JS. 
 
 Abaixo link para download:
 
@@ -24,7 +23,7 @@ https://nodejs.org/en/
 ```
 
 
-GERENCIADOR DE PACOTE - NPM OU YARN
+#### GERENCIADOR DE PACOTE - NPM OU YARN
 
 Para instalar, o gerenciador de pacotes, pode utilizar npm ou yarn. Nesse projeto será utilizado o yarn.
 Quando o nodejs é instalado o npm tambem é instalado. Para instalar o yarn, acesse o  link abaixo:
@@ -33,7 +32,7 @@ Quando o nodejs é instalado o npm tambem é instalado. Para instalar o yarn, ac
 https://classic.yarnpkg.com/en/
 ```
 
-DOCKER
+#### DOCKER
 
 O Docker será utilizado para instalar uma virtualização (container) do banco de dados NoSql Redis. Essa ferramenta é uma plataforma que permite criar e executar “conteiners“, ou seja, o docker é um serviço que usa virtualização de nível de sistema operacional para entregar software em pacotes chamados contêineres. Os contêineres são isolados uns dos outros e agrupam seus próprios softwares, bibliotecas e arquivos de configuração.
 
@@ -48,7 +47,7 @@ https://docs.docker.com/get-docker/
 ```
 
 
-REDIS
+#### REDIS
 
 Apos instalar o Docker, e verificar se o serviço esta iniciado, instale o Redis utilizando o comando abaixo no terminal, dentro da pasta do seu projeto. 
 Será criando uma virtualização (container) no Docker referente o Redis. O nome da imagem será 'redis', será executado na porta '6379'
@@ -67,7 +66,7 @@ yarn init -y
 ```
 
 
-EXPRESS + NODEMAIL + DOTENV
+#### EXPRESS + NODEMAIL + DOTENV
 
 Express - O Express é um framework Node que cria abstrações de rotas, middlewares e muitas outras funções para facilitar a criação de API's.
 
@@ -82,7 +81,7 @@ yarn add express nodemailer dotenv
 ```
 
 
-NODEMON + SUCRASE
+#### NODEMON + SUCRASE
 
 Nodemon - é um utilitário que monitora todas as alterações nos arquivos de sua aplicação e reinicia automaticamente o servidor quando for necessário. Detalhe: apenas o arquivo de variaveis de ambiente (.env), o nodemon nao monitora, qualquer alteração nesse arquivo necessario parar o nodemon manualmente, e iniciar novamente.
 
@@ -116,7 +115,7 @@ No arquivo package.json adicione o script abaixo. O intuito é economizar alguns
 ```
 
 
-PASSWORD-GENERATOR
+#### PASSWORD-GENERATOR
 
 É uma biblioteca que simplifica o processo de gerar senhas randomicas. Utilize o comando abaixo para instalar a biblioteca no projeto.
 
@@ -125,7 +124,7 @@ yarn add password-generator
 ```
 
 
-INSOMNIA
+#### INSOMNIA
 
 Utilizado o Insomnia para testar conexoes de requisições em geral. Se preferir, pode ser usada outra ferramenta, como por exemplo o postman. Abaixo o link para instalar o Insomnia:
 
@@ -134,7 +133,7 @@ https://insomnia.rest/download/
 ```
 
 
-MAILTRAP
+#### MAILTRAP
 
 Utilizado o MailTrap, apenas para teste de envio e recebimento de e-mail. O MailTrap inspeciona e depura amostras de e-mail antes de entregar o projeto final. O MailTrap tem opção paga e gratuita. Utilizei opção gratuita, que para pequenos projetos, é o suficiente para testar envio e recebimento de email.
 
@@ -145,7 +144,7 @@ https://mailtrap.io/
 ```
 
 
-BULL
+#### BULL
 
 O Bull é uma biblioteca Node que implementa um sistema de filas rápido baseado em Redis, que ajuda com o controle de trabalhos distribuídos, ela fornece algumas soluções muito útil para esse tipo de trabalho, em que é possivel realizar trabalhos em background, como filas com prioridades ( FIFO, LIFO e outras) e outras soluções. Nesse projeto será usado o Bull, para enviar de forma escalável mensagens em massa por e-mail. Abaixo o comando para instalar no projeto:
 
@@ -153,12 +152,10 @@ O Bull é uma biblioteca Node que implementa um sistema de filas rápido baseado
 yarn add bull
 ```
 
-BULL-BOARD
+#### BULL-BOARD
 
 O Bull Dashboard é uma IU construída sobre o Bull para ajudá-lo a visualizar suas filas e seus trabalhos. Com esta biblioteca, é possivel visualizar o que está acontecendo com cada trabalho em suas filas, seu status e algumas outras ações que permitirão executar os trabalhos. Abaixo o comando para instalar o bull-board:
 
 ```
 yarn add bull-board
 ```
-
-

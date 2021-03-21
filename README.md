@@ -1,7 +1,5 @@
 ## Projeto: Criação de Jobs em  Background utilizando NodeJs + Redis (BDA NoSQL) + Docker + Bull
 
-+ O projeto publicado é referente ao treinamento do Curso Bootcamp Desenvolvedor NodeJS da Digital Innovation One (https://digitalinnovation.one).
-
 + O intuito do projeto é criar jobs em Background assíncrona utilizando NodeJS + Redis (BDA NoSQL), com a função de cadastrar usuarios (com nome e email), onde será enviado emails para geração de filas de email, que na qual a biblioteca Bull fará o gerenciamento das filas. E para visualização das filas será utilizado o Bull Dashboard.
 
 + Nesse projeto, foi utilizado ferramentas Back End + Nodemom + NodeJS + Docker + Redis (Banco de dados Não-relacional - NoSQL) + Bull (Gerenciamento de Filas) + Bull Dasboard (Visualização das filas).
@@ -11,6 +9,7 @@ Foi aplicado os conceitos de:
     * Criação de Background Jobs (filas) com utilização da biblioteca Bull, para gerenciar as filas e utilização do Bull Dasboard, para visualização das filas. 
     * Utilização da biblioteca 'password-generator' para geração de senha randomica.
 
++ O projeto publicado é referente ao treinamento do Curso Bootcamp Desenvolvedor NodeJS da Digital Innovation One (https://digitalinnovation.one).
 
 ## Ferramentas Utilizadas
 

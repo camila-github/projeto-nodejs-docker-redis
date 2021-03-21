@@ -12,91 +12,68 @@ Foi aplicado os conceitos de:
     * Utilização da biblioteca 'password-generator' para geração de senha randomica.
 
 
-## Requisitos:
+## Ferramentas Utilizadas
 
-#### NODE JS. 
+##### NODE JS. 
 
-Abaixo link para download:
-
-```
-https://nodejs.org/en/
-```
-
+- Abaixo link para download:
+   
+   [https://nodejs.org/en/](https://nodejs.org/en/)
 
 #### GERENCIADOR DE PACOTE - NPM OU YARN
 
-Para instalar, o gerenciador de pacotes, pode utilizar npm ou yarn. Nesse projeto será utilizado o yarn.
+- Para instalar, o gerenciador de pacotes, pode utilizar npm ou yarn. Nesse projeto será utilizado o yarn.
 Quando o nodejs é instalado o npm tambem é instalado. Para instalar o yarn, acesse o  link abaixo:
 
-```
-https://classic.yarnpkg.com/en/
-```
+   [https://classic.yarnpkg.com/en/](https://classic.yarnpkg.com/en/)
 
-#### DOCKER
+##### DOCKER
 
-O Docker será utilizado para instalar uma virtualização (container) do banco de dados NoSql Redis. Essa ferramenta é uma plataforma que permite criar e executar “conteiners“, ou seja, o docker é um serviço que usa virtualização de nível de sistema operacional para entregar software em pacotes chamados contêineres. Os contêineres são isolados uns dos outros e agrupam seus próprios softwares, bibliotecas e arquivos de configuração.
+- O Docker será utilizado para instalar uma virtualização (container) do banco de dados NoSql Redis. Essa ferramenta é uma plataforma que permite criar e executar “conteiners“, ou seja, o docker é um serviço que usa virtualização de nível de sistema operacional para entregar software em pacotes chamados contêineres. Os contêineres são isolados uns dos outros e agrupam seus próprios softwares, bibliotecas e arquivos de configuração.
 
-Com o Docker pode-se colocar as aplicações em um contêiner que possui todos os recursos necessários e que permite testar, implantar e publicar mais rapidamente. 
+- Com o Docker pode-se colocar as aplicações em um contêiner que possui todos os recursos necessários e que permite testar, implantar e publicar mais rapidamente. Nesse projeto, foi instalado o Docker, e criado a virtualização do Redis. A IDE utilizada foi o vscode.
 
-Nesse projeto, foi instalado o Docker, e criado a virtualização do Redis. A IDE utilizada foi o vscode.
+- Abaixo o link, para download do Docker. Faz o download de acordo com o seu sistema operacional. No proprio site tem procedimento de como instalar.
 
-Abaixo o link, para download do Docker. Faz o download de acordo com o seu sistema operacional. No proprio site tem procedimento de como instalar.
-
-```
-https://docs.docker.com/get-docker/
-```
+   [https://docs.docker.com/get-docker/](https://docs.docker.com/get-docker/)
 
 
-#### REDIS
+##### REDIS
 
-Apos instalar o Docker, e verificar se o serviço esta iniciado, instale o Redis utilizando o comando abaixo no terminal, dentro da pasta do seu projeto. 
+- Apos instalar o Docker, e verificar se o serviço esta iniciado, instale o Redis utilizando o comando abaixo no terminal, dentro da pasta do seu projeto. 
 Será criando uma virtualização (container) no Docker referente o Redis. O nome da imagem será 'redis', será executado na porta '6379'
 
-```
-docker run --name redis -p 6379:6379 -d -t redis:alpine
-```
+   `$docker run --name redis -p 6379:6379 -d -t redis:alpine`
 
+- Detalhe: Ao abrir o docker, na opção de dashboard, observe que o Redis esta em execução. Tem outra forma de criar os containers manualmente, que é utilizando no projeto a criação dos arquivos 'Dockerfile' e 'Docker-compose.yml', mas nesse projeto, em questão, nao foi utilizado esses arquivos. Apos instalações das ferramentas acima, inicie o projeto com o comando abaixo:
 
-Detalhe: Ao abrir o docker, na opção de dashboard, observe que o Redis esta em execução.
-Tem outra forma de criar os containers manualmente, que é utilizando no projeto a criação dos arquivos 'Dockerfile' e 'Docker-compose.yml', mas nesse projeto, em questão, nao foi utilizado esses arquivos.
-Apos instalações das ferramentas acima, inicie o projeto com o comando abaixo:
+   `$yarn init -y`
 
-```
-yarn init -y
-```
+##### EXPRESS + NODEMAIL + DOTENV
 
+- Express: O Express é um framework Node que cria abstrações de rotas, middlewares e muitas outras funções para facilitar a criação de API's.
 
-#### EXPRESS + NODEMAIL + DOTENV
+- DotEnv: Ferramenta utilizada para orquestrar as variáveis de ambiente do projeto. 
 
-Express - O Express é um framework Node que cria abstrações de rotas, middlewares e muitas outras funções para facilitar a criação de API's.
+- Nodemail: É um módulo Node de código aberto que permite enviar e-mails pela aplicação.
 
-DotEnv -  Ferramenta utilizada para orquestrar as variáveis de ambiente do projeto. 
+- Instale as ferramentas utilizando o comando abaixo:
 
-Nodemail - É um módulo Node de código aberto que permite enviar e-mails pela aplicação.
+   `$yarn add express nodemailer dotenv`
 
-Instale as ferramentas utilizando o comando abaixo:
+##### NODEMON + SUCRASE
 
-```
-yarn add express nodemailer dotenv
-```
+- Nodemon: é um utilitário que monitora todas as alterações nos arquivos de sua aplicação e reinicia automaticamente o servidor quando for necessário. Detalhe: apenas o arquivo de variaveis de ambiente (.env), o nodemon nao monitora, qualquer alteração nesse arquivo necessario parar o nodemon manualmente, e iniciar novamente.
 
+- Sucrase: O Sucrase é um compilador que permite um desenvolvimento muito rápido. O Sucrase assume que você está desenvolvendo em um navegador recente ou em uma versão recente do Node.js, o mesmo se concentra na compilação de extensões da linguagem não-padrão, como por exemplo JSX, TypeScript e Flow.
 
-#### NODEMON + SUCRASE
+- ' -D ' : O -d instala dependencias de desenvolvimento, ou seja, essas duas ferramentas (nodemon + sucrese) apenas serão utilizadas no ambiente local para desenvolvimento. Não ficará disponivel, em servidores externos, como o ambiente de desenvolvimento, homologação, produção.
 
-Nodemon - é um utilitário que monitora todas as alterações nos arquivos de sua aplicação e reinicia automaticamente o servidor quando for necessário. Detalhe: apenas o arquivo de variaveis de ambiente (.env), o nodemon nao monitora, qualquer alteração nesse arquivo necessario parar o nodemon manualmente, e iniciar novamente.
+- Execute o comando abaixo para instalar as duas dependencias de desenvolvimento. Apos a instalação, repare que no arquivo 'package.json', foi adicionado essas duas dependencias na opção 'devDependencies'
 
-Sucrase - O Sucrase é um compilador que permite um desenvolvimento muito rápido. O Sucrase assume que você está desenvolvendo em um navegador recente ou em uma versão recente do Node.js, o mesmo se concentra na compilação de extensões da linguagem não-padrão, como por exemplo JSX, TypeScript e Flow.
+   `$yarn add nodemon sucrase -D`
 
--D - instala dependencias de desenvolvimento, ou seja, essas duas ferramentas (nodemon + sucrese) apenas serão utilizadas no ambiente local para desenvolvimento. Não ficará disponivel, em servidores externos, como o ambiente de desenvolvimento, homologação, produção.
-
-Execute o comando abaixo para instalar as duas dependencias de desenvolvimento. Apos a instalação, repare que no arquivo 'package.json', foi adicionado essas duas dependencias na opção 'devDependencies'
-
-```
-yarn add nodemon sucrase -D
-```
-
-
-Depois cria um arquivo nodemom.json, e informe o codigo abaixo. Essa configuração fará que todo arquivo com extensão .js seja compilado pelo sucrase-node.
+- Depois cria um arquivo nodemom.json, e informe o codigo abaixo. Essa configuração fará que todo arquivo com extensão .js seja compilado pelo sucrase-node.
 
 ```
 {
@@ -106,7 +83,7 @@ Depois cria um arquivo nodemom.json, e informe o codigo abaixo. Essa configuraç
 }
 ```
 
-No arquivo package.json adicione o script abaixo. O intuito é economizar alguns comandos, no momento que for iniciar algum arquivo pelo nodemon ou pelo proprio node. Por exemplo, quando inicia pelo node é informado o comando 'node index.js', e quando inicia pelo nodemon é informado o comando 'yarn nodemon index.js', e com o script basta informar 'node start' ou 'yarn start'.
+- No arquivo 'package.json' adicione o script abaixo. O intuito é economizar alguns comandos, no momento que for iniciar algum arquivo pelo nodemon ou pelo proprio node. Por exemplo, quando inicia pelo node é informado o comando 'node index.js', e quando inicia pelo nodemon é informado o comando 'yarn nodemon index.js', e com o script basta informar 'node start' ou 'yarn start'.
 
 ```
 "scripts": {
@@ -114,48 +91,35 @@ No arquivo package.json adicione o script abaixo. O intuito é economizar alguns
 }
 ```
 
+##### PASSWORD-GENERATOR
 
-#### PASSWORD-GENERATOR
+- É uma biblioteca que simplifica o processo de gerar senhas randomicas. Utilize o comando abaixo para instalar a biblioteca no projeto.
 
-É uma biblioteca que simplifica o processo de gerar senhas randomicas. Utilize o comando abaixo para instalar a biblioteca no projeto.
+   `$yarn add password-generator`
 
-```
-yarn add password-generator
-```
+##### INSOMNIA
 
+- Utilizado o Insomnia para testar conexoes de requisições em geral. Se preferir, pode ser usada outra ferramenta, como por exemplo o postman. Abaixo o link para instalar o Insomnia:
 
-#### INSOMNIA
+   [https://insomnia.rest/download/](https://insomnia.rest/download/)
 
-Utilizado o Insomnia para testar conexoes de requisições em geral. Se preferir, pode ser usada outra ferramenta, como por exemplo o postman. Abaixo o link para instalar o Insomnia:
+##### MAILTRAP
 
-```
-https://insomnia.rest/download/
-```
+- Utilizado o MailTrap, apenas para teste de envio e recebimento de e-mail. O MailTrap inspeciona e depura amostras de e-mail antes de entregar o projeto final. O MailTrap tem opção paga e gratuita. Utilizei opção gratuita, que para pequenos projetos, é o suficiente para testar envio e recebimento de email.
 
+- Detalhe: Apos os testes, antes de publicar no gitHub não publique o arquivo '.env' com suas credenciais. Como boas-praticas, nao publique o arquivo no gitHub, mas se preferir, apenas para fins didáticos, publique um arquivo '.env.example' apenas para ser usado como modelo, mas sem credenciais.
 
-#### MAILTRAP
+   [https://mailtrap.io/](https://mailtrap.io/)
 
-Utilizado o MailTrap, apenas para teste de envio e recebimento de e-mail. O MailTrap inspeciona e depura amostras de e-mail antes de entregar o projeto final. O MailTrap tem opção paga e gratuita. Utilizei opção gratuita, que para pequenos projetos, é o suficiente para testar envio e recebimento de email.
+##### BULL
 
-Detalhe: Apos os testes, antes de publicar no gitHub não publique o arquivo '.env' com suas credenciais. Como boas-praticas, nao publique o arquivo no gitHub, mas se preferir, apenas para fins didáticos, publique um arquivo '.env.example' apenas para ser usado como modelo, mas sem credenciais.
+- O Bull é uma biblioteca Node que implementa um sistema de filas rápido baseado em Redis, que ajuda com o controle de trabalhos distribuídos, ela fornece algumas soluções muito útil para esse tipo de trabalho, em que é possivel realizar trabalhos em background, como filas com prioridades ( FIFO, LIFO e outras) e outras soluções. Nesse projeto será usado o Bull, para enviar de forma escalável mensagens em massa por e-mail. Abaixo o comando para instalar no projeto:
 
-```
-https://mailtrap.io/
-```
+   `$yarn add bull`
 
+##### BULL-BOARD
 
-#### BULL
+- O Bull Dashboard é uma IU construída sobre o Bull para ajudá-lo a visualizar suas filas e seus trabalhos. Com esta biblioteca, é possivel visualizar o que está acontecendo com cada trabalho em suas filas, seu status e algumas outras ações que permitirão executar os trabalhos. Abaixo o comando para instalar o bull-board:
 
-O Bull é uma biblioteca Node que implementa um sistema de filas rápido baseado em Redis, que ajuda com o controle de trabalhos distribuídos, ela fornece algumas soluções muito útil para esse tipo de trabalho, em que é possivel realizar trabalhos em background, como filas com prioridades ( FIFO, LIFO e outras) e outras soluções. Nesse projeto será usado o Bull, para enviar de forma escalável mensagens em massa por e-mail. Abaixo o comando para instalar no projeto:
-
-```
-yarn add bull
-```
-
-#### BULL-BOARD
-
-O Bull Dashboard é uma IU construída sobre o Bull para ajudá-lo a visualizar suas filas e seus trabalhos. Com esta biblioteca, é possivel visualizar o que está acontecendo com cada trabalho em suas filas, seu status e algumas outras ações que permitirão executar os trabalhos. Abaixo o comando para instalar o bull-board:
-
-```
-yarn add bull-board
-```
+   `$yarn add bull-board`
+   

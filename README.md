@@ -20,7 +20,7 @@ Foi aplicado os conceitos de:
    
    [https://nodejs.org/en/](https://nodejs.org/en/)
 
-#### GERENCIADOR DE PACOTE - NPM OU YARN
+##### GERENCIADOR DE PACOTE - NPM OU YARN
 
 - Para instalar, o gerenciador de pacotes, pode utilizar npm ou yarn. Nesse projeto será utilizado o yarn.
 Quando o nodejs é instalado o npm tambem é instalado. Para instalar o yarn, acesse o  link abaixo:
